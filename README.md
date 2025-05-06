@@ -1,8 +1,8 @@
 # Ieightfish
-#This is Ieightfish future company. I will upload the code and files here for expriment.
-Also, only me and my team mate can access this .
-I will focus on game delveloping and app delveloping.
-These are my near future profoilo. 
+#This is Ieightfish's future gaming studio. I will upload the code and files here for experimentation.
+Also, only my teammate can access this.
+I will focus on game development and app development.
+These are my near-future profile. 
 
 
 
