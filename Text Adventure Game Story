@@ -1,1 +1,127 @@
+package Draft1;
+import java.util.Scanner;
 
+public class Just_Game_Chapter1 {
+    // Game State
+    private static Scanner scanner = new Scanner(System.in);
+    private static String playerName;
+    private static String weapon = "Basic Pistol";
+    private static int weaponDamage = 10;
+    private static int health = 100;
+    private static int lilaAffection = 0;
+
+    public static void main(String[] args) {
+        intro();
+        prepareWeapon();
+        firstMission();
+        meetLila();
+        chapter1Cliffhanger();
+    }
+
+    // ==== INTRO ====
+    private static void intro() {
+        System.out.println("🎮 **JUST GAME: CHAPTER 1 - THE MEME AWAKENS** 🎮");
+        System.out.println("-----------------------------------------------");
+        System.out.print("Enter your name: ");
+        playerName = scanner.nextLine();
+
+        // Easter Egg
+        if (playerName.equalsIgnoreCase("PewDiePie")) {
+            System.out.println("\nQuartermaster: 'BROFIST! You get a special weapon!'");
+            weapon = "Brofist Gauntlet";
+            weaponDamage = 50;
+        } else {
+            System.out.println("\nQuartermaster: 'Agent " + playerName + ", you're our last hope.'");
+        }
+    }
+
+    // ==== WEAPON SELECTION ====
+    private static void prepareWeapon() {
+        System.out.println("\n🔫 **Weapon Selection**");
+        System.out.println("1. Glock (Standard issue)");
+        System.out.println("2. Baguette ('French spy mode')");
+        System.out.println("3. Uno Reverse Card (???)");
+        
+        String choice = scanner.nextLine();
+        switch (choice) {
+            case "1":
+                System.out.println("Quartermaster: 'Solid choice. Don't miss.'");
+                break;
+            case "2":
+                weapon = "Baguette";
+                weaponDamage = 5;
+                System.out.println("Quartermaster: '...Hon hon hon.' (+10 Style Points)");
+                break;
+            case "3":
+                weapon = "Uno Reverse Card";
+                weaponDamage = 999;
+                System.out.println("Quartermaster: '...You cheater.'");
+                break;
+            default:
+                System.out.println("Quartermaster: 'Indecisive? Take this spoon.'");
+                weapon = "Spoon";
+                weaponDamage = 2;
+        }
+    }
+
+    // ==== FIRST MISSION ====
+    private static void firstMission() {
+        System.out.println("\n🚨 **Mission Briefing**");
+        System.out.println("Quartermaster: 'A rogue YouTuber, Agent Karen, is planning to unleash the DISLIKE BUTTON APOCALYPSE.'");
+        System.out.println("Your target: A double spy in the cafeteria. Watch for sus behavior.");
+
+        System.out.println("\n🍔 **Cafeteria Scene**");
+        System.out.println("You see a shady agent dumping salt into coffee.");
+        System.out.println("1. 'Stop right there!'");
+        System.out.println("2. *Slip a banana peel in their path*");
+        System.out.println("3. 'Nothing sus here...' (Ignore)");
+
+        String choice = scanner.nextLine();
+        switch (choice) {
+            case "1":
+                System.out.println("Spy: 'CURSES!' *throws coffee and runs*");
+                break;
+            case "2":
+                System.out.println("Spy: 'Wha—AAAAH!' *slips* 'I HATE YOU!'");
+                break;
+            default:
+                System.out.println("Spy poisons the coffee. Mission failed.");
+                health -= 20;
+        }
+    }
+
+    // ==== MEET LILA (ROMANCE START) ====
+    private static void meetLila() {
+        System.out.println("\n💻 **Meet Lila, the Hacker**");
+        System.out.println("Lila: 'Oh! You're the new agent? I... *tugs hoodie* Nevermind.'");
+        System.out.println("1. 'You’re cute when you’re nervous.'");
+        System.out.println("2. 'Focus on the mission.'");
+        System.out.println("3. *Wink* 'Bet you hack hearts too.'");
+
+        String choice = scanner.nextLine();
+        switch(choice) {
+            case "1":
+                System.out.println("Lila: 'W-what?! *blushes* ...Shut up.' (+2 Affection)");
+                lilaAffection += 2;
+                break;
+            case "3":
+                System.out.println("Lila: '!!! *spills coffee* Y-You’re impossible!' (+3 Affection)");
+                lilaAffection += 3;
+                break;
+            default:
+                System.out.println("Lila: '...Okay, boring.'");
+        }
+    }
+
+    // ==== CLIFFHANGER ENDING ====
+    private static void chapter1Cliffhanger() {
+        System.out.println("\n💥 **CHAPTER 1 END**");
+        System.out.println("You find a note on the spy: 'The Apocalypse starts at... TikTok HQ.'");
+        
+        if (lilaAffection >= 3) {
+            System.out.println("Lila whispers: 'Meet me later... I have a secret.'");
+        }
+
+        System.out.println("\nTo be continued in CHAPTER 2...");
+    }
+}
